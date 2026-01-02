@@ -1,7 +1,7 @@
 # Copilot / AI agent instructions — Guiroy Subtheme
 
 Purpose
-- This repo is a Drupal sub-theme (machine name: `stanford_starter`) built on the `stanford_basic` base theme. The repository contains front-end source (SCSS, minimal JS, assets) and Drupal theme metadata. AI agents should focus on the front-end build pipeline and Drupal library consumption patterns.
+- This repo is a Drupal sub-theme (machine name: `guiroy_subtheme`) built on the `stanford_basic` base theme. The repository contains front-end source (SCSS, minimal JS, assets) and Drupal theme metadata. AI agents should focus on the front-end build pipeline and Drupal library consumption patterns.
 
 Quick start (developer commands)
 - Install node deps: `yarn install`
@@ -12,8 +12,8 @@ Build outputs & how they are consumed
 - Webpack entry points (see `webpack.config.js`):
   - `main` -> `src/scss/main.scss` -> outputs `dist/css/main.css`
   - `ckeditor5` -> `src/scss/ckeditor5.scss` -> outputs `dist/css/ckeditor5.css`
-- `stanford_starter.libraries.yml` references `dist/css/main.css` in the `allpages` library.
-- `stanford_starter.info.yml` sets `ckeditor5-stylesheets: [dist/css/ckeditor5.css]` for editor integration.
+- `guiroy_subtheme.libraries.yml` references `dist/css/main.css` in the `allpages` library.
+- `guiroy_subtheme.info.yml` sets `ckeditor5-stylesheets: [dist/css/ckeditor5.css]` for editor integration.
 - Webpack's `FileManagerPlugin` deletes `dist/` at the start of each build; expect a clean `dist/` after every run.
 
 Dev / HMR notes (important gotcha)
@@ -38,8 +38,8 @@ Assets & webpack aliases
 - SCSS variables reference these (example in `src/scss/main.scss`): `$su-image-path: '~decanter/core/src/img'` and `$fa-font-path`.
 
 Drupal integration points
-- Theme metadata: `stanford_starter.info.yml` (regions, base theme, editor stylesheet)
-- Libraries: `stanford_starter.libraries.yml` controls which compiled CSS is loaded for pages.
+- Theme metadata: `guiroy_subtheme.info.yml` (regions, base theme, editor stylesheet)
+- Libraries: `guiroy_subtheme.libraries.yml` controls which compiled CSS is loaded for pages.
 - Typical dev checklist when opening PRs (see `.github/pull_request_template.md`): rebuild caches and import config: `drush cr ; drush ci`.
 
 CI & release
@@ -54,14 +54,14 @@ Notes:
 - Please avoid using decanter components/styles directly unless necessary; prefer using or extending styles from `stanford_profile` first.
 
 Conventions & patterns (explicit)
-- Use `.is-` prefix for transient state classes (see comments in `stanford_starter.libraries.yml`).
+- Use `.is-` prefix for transient state classes (see comments in `guiroy_subtheme.libraries.yml`).
 - Keep visual-only rules under `theme/`; functional/component styles should live under `components/`.
 - Prefer mixins for reusable button/cta styles (`utilities/mixins/_buttons.scss`, `_cta.scss`).
 
 Where to look for examples
 - `src/scss/main.scss` — entry file showing how everything is composed
 - `webpack.config.js` — build and asset behavior (aliases, plugins, HMR logic, output folders)
-- `stanford_starter.libraries.yml` / `stanford_starter.info.yml` — how compiled assets are consumed by Drupal
+- `guiroy_subtheme.libraries.yml` / `guiroy_subtheme.info.yml` — how compiled assets are consumed by Drupal
 - `.github/pull_request_template.md` — PR expectations and commands reviewers expect
 
 Notable gotchas / checks for PRs

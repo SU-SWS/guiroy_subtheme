@@ -1,5 +1,5 @@
 #/bin/bash
-# This script will rename the theme from stanford_starter to your custom theme name.
+# This script will rename the theme from guiroy_subtheme to your custom theme name.
 
 function renameFilesRecursively () {
   SEARCH="$1"
@@ -29,9 +29,9 @@ then
     exit 0
 fi
 
-find . -type f -not -path "./.git/*" -not -path "./node_modules/*" -exec sed -i "s/stanford_starter/$NEW_NAME/g" {} + &&
+find . -type f -not -path "./.git/*" -not -path "./node_modules/*" -exec sed -i "s/guiroy_subtheme/$NEW_NAME/g" {} + &&
 
-renameFilesRecursively "stanford_starter" $NEW_NAME;
+renameFilesRecursively "guiroy_subtheme" $NEW_NAME;
 
 rm ./rename_theme.sh
 
