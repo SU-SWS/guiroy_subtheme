@@ -1,4 +1,4 @@
-# Copilot / AI agent instructions — Stanford Starter theme
+# Copilot / AI agent instructions — Guiroy Subtheme
 
 Purpose
 - This repo is a Drupal sub-theme (machine name: `stanford_starter`) built on the `stanford_basic` base theme. The repository contains front-end source (SCSS, minimal JS, assets) and Drupal theme metadata. AI agents should focus on the front-end build pipeline and Drupal library consumption patterns.

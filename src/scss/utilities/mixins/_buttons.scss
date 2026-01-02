@@ -3,14 +3,15 @@
 // Define button mixins here
 // Example: All mixin names should be prefaced with your abbreviation (saa, soe, ood, etc)
 
-//@mixin example-button--gray {
-  // button colors here
+// Reusable mixin to set rounded corners for buttons. Prefer including this mixin
+// in component or theme button rules so the project has a single source of truth.
+@mixin su-button-rounded($radius: 0.375rem) {
+  border-radius: $radius;
+  // Ensure consistent rendering across form elements
+  -webkit-appearance: none;
+  overflow: visible; // avoid clipping on focus outlines
+}
 
-  /* don't forget to include decanter icon color overrides too;
-  ** if you override a link color, you must also override the :after psuedo element
-  ** so decanter icons correspond to the link color.
-  */
-
-  // Include the correct icon color mixin inside your mixins here
-  //@include example--black-icons
-//}
+/* Example usage:
+@include su-button-rounded(); // default radius
+*/

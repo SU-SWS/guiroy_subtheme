@@ -1,6 +1,6 @@
-name: Stanford Starter
+name: Guiroy Subtheme
 type: theme
-description: 'Stanford Starter Theme.'
+description: 'Guiroy Subtheme.'
 package: Stanford
 version: 8.x-1.0-dev
 core_version_requirement: ^9 || ^10
