@@ -1,9 +1,50 @@
 @charset "UTF-8";
 
-// override default button styles here and add additional button classes as needed.
-//.su-button {
-//    include button mixins here
-//  &:hover, &:focus {
-//    include button mixins here
-//  }
-//}
+// Add global rounded corners to all button-like elements.
+// This uses the `su-button-rounded` mixin defined in utilities/mixins/_buttons.scss
+// so that we have one consistent radius to change project-wide.
+@import '../utilities/mixins/buttons';
+
+$su-button-radius: 0.375rem;
+
+// Apply the shared rounded-corner mixin to all common button-like
+// elements, including form inputs and common utility classes used by
+// components and design system libraries.
+:is(
+  button,
+  button[type="reset"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  input[type="image"],
+  a.button,
+  .button,
+  .btn,
+  .su-button,
+  .form-submit,
+  .cta,
+  .decanter-button,
+  [role="button"]
+) {
+  @include su-button-rounded($su-button-radius);
+}
+
+// Stronger override (no !important) for cases where the base theme uses
+// equal-specificity selectors. Repeating the class/attribute increases
+// selector specificity so this rule will win against single-selector
+// rules from the base theme.
+:is(
+  .button.button,
+  a.button.button,
+  .btn.btn,
+  .su-button.su-button,
+  .form-submit.form-submit,
+  .cta.cta,
+  button[type="submit"][type="submit"],
+  input[type="submit"][type="submit"],
+  input[type="button"][type="button"],
+  input[type="reset"][type="reset"],
+  [role="button"][role="button"]
+) {
+  @include su-button-rounded($su-button-radius);
+}

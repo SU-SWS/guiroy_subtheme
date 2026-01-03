@@ -1,8 +1,11 @@
 {
-  "name": "stanford_starter",
+  "name": "guiroy_subtheme",
   "version": "1.0.0",
   "description": "Changelog: [CHANGELOG.md](CHANGELOG.md)",
   "main": "webpack.config.js",
+  "engines": {
+    "node": ">=18 <19"
+  },
   "scripts": {
     "watch": "NODE_ENV=production webpack --watch",
     "build": "NODE_ENV=production webpack"
