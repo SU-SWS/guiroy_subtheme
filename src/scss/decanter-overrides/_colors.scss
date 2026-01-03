@@ -1,0 +1,6 @@
+// Override Decanter color variables so the site uses Guiroy primary color
+// These must be imported BEFORE Decanter itself to replace Decanter's !default vars
+$guiroy-color-primary: #620059;
+
+$su-color-digital-red: $guiroy-color-primary;
+$su-color-digital-red-light: lighten($guiroy-color-primary, 12%);

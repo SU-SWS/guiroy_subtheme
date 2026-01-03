@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+// Overrides for Decanter components to use Guiroy primary color
+// These rules intentionally target specific Decanter selectors that use
+// the digital red color (#b1040e) so we can avoid editing node_modules.
+
+// CTA buttons
+.su-cta .su-cta__button {
+  background-color: $guiroy-color-primary;
+  color: #fff;
+}
+.su-cta .su-cta__button:after,
+.su-cta .su-cta__button:before {
+  background-color: #fff;
+  color: $guiroy-color-primary;
+}
+
+// Alert inline buttons
+.su-alert__text a.su-button,
+.su-alert__text a.su-button--secondary {
+  box-shadow: inset 0 0 0 2px $guiroy-color-primary;
+  color: $guiroy-color-primary;
+}
+.su-alert__text a.su-button:after,
+.su-alert__text a.su-button:before,
+.su-alert__text a.su-button--secondary:after,
+.su-alert__text a.su-button--secondary:before {
+  background-color: $guiroy-color-primary;
+  color: #fff;
+}
+
+// Form controls (checkbox / radio checked state)
+[type=checkbox]:checked + label:before,
+[type=radio]:checked + label:before {
+  background-color: $guiroy-color-primary;
+  box-shadow: 0 0 0 1px $guiroy-color-primary;
+}
+[type=radio]:checked + label:before {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px $guiroy-color-primary;
+}
+[type=checkbox]:focus + label:before,
+[type=radio]:focus + label:before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px $guiroy-color-primary;
+}
+
+// Nav current/active states
+.su-main-nav--light [class$=nav__item--current] > a,
+.su-main-nav--light ul li a:active,
+.su-main-nav--light ul li a:active:before {
+  color: $guiroy-color-primary;
+  background-color: transparent;
+}
+.su-main-nav--light [class$=nav__item--current] > a:before,
+.su-main-nav--light [class$=nav__item--current] > a:focus:before,
+.su-main-nav--light [class$=nav__item--current] > a:hover:before {
+  background-color: $guiroy-color-primary;
+}
+
+// Accordion toggle indicator
+.su-accordion__title > .su-accordion__button:after {
+  color: $guiroy-color-primary;
+}
+
+// Range track (Firefox)
+[type=range]::-moz-range-track {
+  background: $guiroy-color-primary;
+}
+
+// Generic decanter primary button fallback (keeps component styles but ensures color)
+.su-button,
+.su-button--primary,
+button.su-button,
+a.su-button {
+  background-color: $guiroy-color-primary !important;
+  color: #fff !important;
+}
