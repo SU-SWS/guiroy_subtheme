@@ -4,9 +4,9 @@
 // All variable names should be prefaced with your abbreviation (guiroy)
 
 // Primary palette - buttons, links, accents
-$guiroy-color-primary: #00677f;
-$guiroy-color-primary-hover: #004d5f;
-$guiroy-color-primary-light: #e6f2f5;
+$guiroy-color-primary: #620059;
+$guiroy-color-primary-hover: #350D36;
+$guiroy-color-primary-light:  #734675;
 
 // Secondary palette - secondary buttons, borders
 $guiroy-color-secondary: #5c6773;
@@ -20,3 +20,6 @@ $guiroy-color-bg-card: #ffffff;
 // Card styling
 $guiroy-color-card-border: #e0e6e9;
 $guiroy-color-card-shadow: rgba(0, 103, 127, 0.08);
+
+// Replaces Cardinal Red (#8C1515) sitewide
+$guiroy-color-cool-grey: #53565a;
