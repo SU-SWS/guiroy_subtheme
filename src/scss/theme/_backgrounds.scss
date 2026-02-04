@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+// Custom background color utilities for section variants.
+// Use with layout paragraph section options or wrapper classes.
+
+.guiroy-bg-light {
+  background-color: $guiroy-color-bg-light;
+}
+
+.guiroy-bg-subtle {
+  background-color: $guiroy-color-bg-subtle;
+}
+
+.guiroy-bg-primary {
+  background-color: $guiroy-color-primary;
+  color: $su-color-white;
+
+  a:not(.su-button):not(.su-button--big) {
+    color: $su-color-white;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: $guiroy-color-primary-light;
+
+      &::after {
+        background-color: $guiroy-color-primary-light !important;
+      }
+    }
+  }
+
+  .su-button--secondary,
+  .su-button--secondary.su-link {
+    background-color: transparent !important;
+    box-shadow: inset 0 0 0 2px $su-color-white;
+    color: $su-color-white !important;
+
+    &:hover,
+    &:focus {
+      background-color: rgba($su-color-white, 0.15) !important;
+      color: $su-color-white !important;
+
+      &::after {
+        background-color: $su-color-white !important;
+      }
+    }
+  }
+}
