@@ -33,3 +33,42 @@ $guiroy-card-radius: 0.75rem;
   border-radius: $guiroy-card-radius;
   overflow: hidden;
 }
+
+// Equal height cards (match ppo_irsr_subtheme behavior).
+@include grid-media-min('md') {
+  .ds-entity--node {
+    height: 100%;
+
+    .su-card {
+      height: 100%;
+    }
+  }
+
+  // Card paragraph type.
+  .ptype-stanford-card {
+    height: 100%;
+
+    .ds-entity--stanford-card {
+      height: 100%;
+
+      .su-card {
+        height: 100%;
+      }
+    }
+  }
+
+  // More News section.
+  .stanford-news.vertical-teaser-term {
+    .su-list-unstyled {
+      // Needed when less than 4 news items.
+      @include responsive-spacing('margin-bottom', 3);
+    }
+  }
+
+  // More Publications section.
+  .stanford-publications-related {
+    .su-card {
+      height: 100%;
+    }
+  }
+}
