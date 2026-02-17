@@ -2,8 +2,8 @@ name: Guiroy Subtheme
 type: theme
 description: 'Guiroy Subtheme.'
 package: Stanford
-version: 8.x-1.0-dev
-core_version_requirement: ^9 || ^10
+version: 0.9.1
+core_version_requirement: ^9 || ^10 || ^11
 base theme: stanford_basic
 libraries:
   - guiroy_subtheme/allpages
