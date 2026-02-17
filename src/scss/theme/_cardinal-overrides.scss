@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+// Override Cardinal Red (#8C1515) with Cool Grey (#53565A) for some components.
+// Logo, brand bar, and global footer must always stay Cardinal Red.
+
+// Stat card variants (8c1515 = Cardinal Red in class names)
+.stat-icon-8c1515 {
+  color: $guiroy-color-cool-grey;
+}
+
+.stat-stat-8c1515 {
+  color: $guiroy-color-cool-grey;
+}
+
+.stat-bg-8c1515 {
+  background: $guiroy-color-cool-grey;
+}

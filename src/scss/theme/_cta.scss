@@ -1,4 +1,66 @@
 @charset "UTF-8";
 
-// apply cta and link mixins here appropriately to override link styles.
+// Custom link colors - apply theme accent to text links and CTAs.
+
+// Standard text links
+a:not(.su-button):not(.su-button--big):not(.button) {
+  color: $guiroy-color-primary;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+
+  &:hover,
+  &:focus {
+    color: $guiroy-color-primary-hover;
+    text-decoration: underline;
+
+    &::after {
+      background-color: $guiroy-color-primary-hover !important;
+    }
+  }
+
+  &:active {
+    color: $guiroy-color-primary-hover;
+  }
+}
+
+// External link icon color
+a.su-link--external:not(.su-button):not(.su-button--big) {
+  &::after {
+    background-color: $guiroy-color-primary !important;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      background-color: $guiroy-color-primary-hover !important;
+    }
+  }
+}
+
+// CTA / action links (e.g. "Read more", card links)
+a.su-link--action {
+  color: $guiroy-color-primary;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: $guiroy-color-primary-hover;
+
+    &::after {
+      background-color: $guiroy-color-primary-hover !important;
+    }
+  }
+}
+
+// Mailto icon color
+a.mailto:not(.su-button):not(.su-button--big) {
+  svg {
+    fill: $guiroy-color-primary;
+
+    &:hover,
+    &:focus {
+      fill: $guiroy-color-primary-hover;
+    }
+  }
+}
 

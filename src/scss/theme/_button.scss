@@ -1,15 +1,12 @@
 @charset "UTF-8";
 
-// Add global rounded corners to all button-like elements.
-// This uses the `su-button-rounded` mixin defined in utilities/mixins/_buttons.scss
-// so that we have one consistent radius to change project-wide.
+// Custom button colors, shapes, and styling.
 @import '../utilities/mixins/buttons';
 
-$su-button-radius: 0.375rem;
+// Button shape: 0.5rem = softly rounded, 2rem = pill-shaped
+$su-button-radius: 0.5rem;
 
-// Apply the shared rounded-corner mixin to all common button-like
-// elements, including form inputs and common utility classes used by
-// components and design system libraries.
+// Apply rounded corners and custom colors to primary buttons.
 :is(
   button,
   button[type="reset"],
@@ -25,14 +22,55 @@ $su-button-radius: 0.375rem;
   .cta,
   .decanter-button,
   [role="button"]
-) {
+):not(.su-button--secondary) {
   @include su-button-rounded($su-button-radius);
+  background-color: $guiroy-color-primary !important;
+  color: $su-color-white !important;
+  border: none;
+  font-weight: $su-font-semi-bold;
+
+  &:hover,
+  &:focus {
+    background-color: $guiroy-color-primary-hover !important;
+    color: $su-color-white !important;
+
+    &::after {
+      background-color: $su-color-white !important;
+    }
+  }
+
+  &:active {
+    background-color: $guiroy-color-primary-hover !important;
+  }
 }
 
-// Stronger override (no !important) for cases where the base theme uses
-// equal-specificity selectors. Repeating the class/attribute increases
-// selector specificity so this rule will win against single-selector
-// rules from the base theme.
+// Secondary button (outlined) styling.
+.su-button--secondary,
+.su-button--secondary.su-link,
+a.su-button--secondary {
+  @include su-button-rounded($su-button-radius);
+  background-color: transparent !important;
+  box-shadow: inset 0 0 0 2px $guiroy-color-primary;
+  color: $guiroy-color-primary !important;
+  font-weight: $su-font-semi-bold;
+
+  &:hover,
+  &:focus {
+    background-color: $guiroy-color-primary-light !important;
+    color: $guiroy-color-primary-hover !important;
+    box-shadow: inset 0 0 0 2px $guiroy-color-primary-hover;
+
+    &::after {
+      background-color: $guiroy-color-primary-hover !important;
+    }
+  }
+
+  &:active {
+    background-color: $guiroy-color-primary-light !important;
+  }
+}
+
+// Stronger override for equal-specificity cases.
 :is(
   .button.button,
   a.button.button,
@@ -45,6 +83,36 @@ $su-button-radius: 0.375rem;
   input[type="button"][type="button"],
   input[type="reset"][type="reset"],
   [role="button"][role="button"]
-) {
+):not(.su-button--secondary):not(.su-button--secondary.su-link) {
   @include su-button-rounded($su-button-radius);
+}
+
+// External link icon color on primary buttons.
+a.su-link--external {
+  &.su-button:not(.su-button--secondary),
+  &.su-button--big:not(.su-button--secondary) {
+    &::after {
+      background-color: $su-color-white !important;
+    }
+
+    &:hover,
+    &:focus {
+      &::after {
+        background-color: $su-color-white !important;
+      }
+    }
+  }
+
+  &.su-button--secondary {
+    &::after {
+      background-color: $guiroy-color-primary !important;
+    }
+
+    &:hover,
+    &:focus {
+      &::after {
+        background-color: $guiroy-color-primary-hover !important;
+      }
+    }
+  }
 }

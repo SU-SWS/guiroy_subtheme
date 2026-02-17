@@ -8,7 +8,7 @@
 			}
 			@media print {
 				.su-logo {
-					fill: #8C1515;
+					fill: #8c1515;
 				}
 			}
     </style>

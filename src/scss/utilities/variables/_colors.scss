@@ -1,7 +1,25 @@
 @charset "UTF-8";
 /* Subtheme Specific colors, Stanford/Decanter colors are not defined here */
 
-// All variable names should be prefaced with your abbreviation (saa, soe, ood, etc)
+// All variable names should be prefaced with your abbreviation (guiroy)
 
-// define colors here in the format of:
-//$abbreviation-color-pink: #ff0099; // like $saa-color-pink
+// Primary palette - buttons, links, accents
+$guiroy-color-primary: #620059;
+$guiroy-color-primary-hover: #350D36;
+$guiroy-color-primary-light:  #734675;
+
+// Secondary palette - secondary buttons, borders
+$guiroy-color-secondary: #5c6773;
+$guiroy-color-secondary-hover: #3d4652;
+
+// Background colors
+$guiroy-color-bg-light: #f7f9fa;
+$guiroy-color-bg-subtle: #eef2f4;
+$guiroy-color-bg-card: #ffffff;
+
+// Card styling
+$guiroy-color-card-border: #e0e6e9;
+$guiroy-color-card-shadow: rgba(0, 103, 127, 0.08);
+
+// Replaces Cardinal Red (#8C1515) sitewide
+$guiroy-color-cool-grey: #53565a;

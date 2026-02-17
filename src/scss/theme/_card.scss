@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+// Custom card shapes and styling.
+
+$guiroy-card-radius: 0.75rem;
+
+.su-card {
+  border-radius: $guiroy-card-radius;
+  overflow: hidden;
+  border: 1px solid $guiroy-color-card-border;
+  box-shadow: 0 2px 8px $guiroy-color-card-shadow;
+  background-color: $guiroy-color-bg-card;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+
+  &:hover,
+  &:focus-within {
+    box-shadow: 0 4px 16px $guiroy-color-card-shadow;
+    border-color: darken($guiroy-color-card-border, 5%);
+  }
+
+  .su-card__contents {
+    border-radius: 0 0 $guiroy-card-radius $guiroy-card-radius;
+  }
+
+  .su-media--partial .su-media__wrapper,
+  .su-card__media img {
+    border-radius: $guiroy-card-radius $guiroy-card-radius 0 0;
+  }
+}
+
+// Hero cards (overlay banners)
+.su-hero__card {
+  border-radius: $guiroy-card-radius;
+  overflow: hidden;
+}
+
+// Equal height cards (match ppo_irsr_subtheme behavior).
+@include grid-media-min('md') {
+  .ds-entity--node {
+    height: 100%;
+
+    .su-card {
+      height: 100%;
+    }
+  }
+
+  // Card paragraph type.
+  .ptype-stanford-card {
+    height: 100%;
+
+    .ds-entity--stanford-card {
+      height: 100%;
+
+      .su-card {
+        height: 100%;
+      }
+    }
+  }
+
+  // More News section.
+  .stanford-news.vertical-teaser-term {
+    .su-list-unstyled {
+      // Needed when less than 4 news items.
+      @include responsive-spacing('margin-bottom', 3);
+    }
+  }
+
+  // More Publications section.
+  .stanford-publications-related {
+    .su-card {
+      height: 100%;
+    }
+  }
+}

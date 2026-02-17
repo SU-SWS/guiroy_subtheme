@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+// Override Cardinal Red (#8C1515) with Cool Grey (#53565A) before Decanter loads.
+$guiroy-color-cool-grey: #53565a;
+$su-color-cardinal-red: $guiroy-color-cool-grey;
+$su-color-cardinal-red-dark: $guiroy-color-cool-grey;
+$su-color-cardinal-red-light: $guiroy-color-cool-grey;
+
 // My theme's config settings.
 $su-image-path: '~decanter/core/src/img';
 $fa-font-path:  '~@fortawesome/fontawesome-free/webfonts';
