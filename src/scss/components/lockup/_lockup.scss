@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+// Minimally Branded: lockup — remove border, adjust spacing.
+.su-lockup__cell1,
+.su-lockup__cell2 {
+  border: 0;
+
+  .su-lockup__line4,
+  .su-lockup__logo-wrapper {
+    padding-right: 7px;
+  }
+
+  .su-lockup__line4 {
+    overflow-wrap: break-word;
+    word-break: inherit;
+  }
+}
+
+.su-lockup__cell1.empty-logo {
+  padding: 0;
+  margin: 0;
+
+  + .su-lockup__cell2 {
+    padding: 0;
+    margin: 0;
+  }
+}
