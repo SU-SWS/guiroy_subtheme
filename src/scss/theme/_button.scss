@@ -1,93 +1,137 @@
 @charset "UTF-8";
 
-// Custom button colors, shapes, and styling.
-@import '../utilities/mixins/buttons';
+@import '../utilities/variables/index';
+@import '../utilities/mixins/index';
 
-// Button shape: 0.5rem = softly rounded, 2rem = pill-shaped
-$su-button-radius: 0.5rem;
+// Override default button styles — approach and styling aligned with stvp_subtheme rounded buttons.
 
-// Apply rounded corners and custom colors to primary buttons.
-:is(
-  button,
-  button[type="reset"],
-  input[type="button"],
-  input[type="submit"],
-  input[type="reset"],
-  input[type="image"],
-  a.button,
-  .button,
-  .btn,
-  .su-button,
-  .form-submit,
-  .cta,
-  .decanter-button,
-  [role="button"]
-):not(.su-button--secondary) {
-  @include su-button-rounded($su-button-radius);
-  background-color: $guiroy-color-primary !important;
-  color: $su-color-white !important;
-  border: none;
-  font-weight: $su-font-semi-bold;
+a.su-button {
+  @include type-e;
+  @include rounded-button-general();
+  @include primary-button-hover();
+  @include set-button-color($guiroy-button-gradient, $guiroy-button-border-gradient);
 
-  &:hover,
-  &:focus {
-    background-color: $guiroy-color-primary-hover !important;
-    color: $su-color-white !important;
+  &.su-link--external {
+    text-decoration: none;
+    &:after {
+      @include arrow-external-icon();
+      width: 16px;
+      height: 12px;
+      margin-top: 2px;
+      margin-right: 0;
+    }
 
-    &::after {
-      background-color: $su-color-white !important;
+    &:hover,
+    &:focus {
+      &:after {
+        margin-top: 8px;
+      }
     }
   }
 
-  &:active {
-    background-color: $guiroy-color-primary-hover !important;
-  }
-}
+  &.mailto {
+    svg {
+      margin-top: -9px;
+    }
 
-// Secondary button (outlined) styling.
-.su-button--secondary,
-.su-button--secondary.su-link,
-a.su-button--secondary {
-  @include su-button-rounded($su-button-radius);
-  background-color: transparent !important;
-  box-shadow: inset 0 0 0 2px $guiroy-color-primary;
-  color: $guiroy-color-primary !important;
-  font-weight: $su-font-semi-bold;
+    &:not(.su-button--small) {
+      svg {
+        width: 28px;
+        height: 22px;
+      }
+    }
 
-  &:hover,
-  &:focus {
-    background-color: $guiroy-color-primary-light !important;
-    color: $guiroy-color-primary-hover !important;
-    box-shadow: inset 0 0 0 2px $guiroy-color-primary-hover;
+    &:after {
+      display: none;
+    }
 
-    &::after {
-      background-color: $guiroy-color-primary-hover !important;
+    &:hover,
+    &:focus {
+      &.su-button--secondary {
+        svg {
+          fill: $su-color-black;
+        }
+      }
+      svg {
+        fill: white;
+      }
     }
   }
 
-  &:active {
-    background-color: $guiroy-color-primary-light !important;
+  &.su-button--small {
+    @include type-f;
+
+    &:after {
+      width: 12px;
+      height: 9px;
+    }
+    &:hover,
+    &:focus {
+      &:after {
+        width: 12px;
+        height: 9px;
+      }
+    }
   }
 }
 
-// Stronger override for equal-specificity cases.
-:is(
-  .button.button,
-  a.button.button,
-  .btn.btn,
-  .su-button.su-button,
-  .form-submit.form-submit,
-  .cta.cta,
-  button[type="submit"][type="submit"],
-  input[type="submit"][type="submit"],
-  input[type="button"][type="button"],
-  input[type="reset"][type="reset"],
-  [role="button"][role="button"]
-):not(.su-button--secondary):not(.su-button--secondary.su-link) {
-  @include su-button-rounded($su-button-radius);
+a.su-button--big {
+  @include rounded-button-general();
+  @include primary-button-hover();
+  @include set-button-color($guiroy-button-gradient, $guiroy-button-border-gradient);
+
+  padding: 17px 30px 18px;
+  @include type-d;
+
+  &:after {
+    width: 25px;
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 0;
+  }
+
+  &.su-link--external {
+    &:not(:hover):not(:focus) {
+      text-decoration: none;
+    }
+
+    &:after {
+      width: 22px;
+      height: 18px;
+      margin-left: 8px;
+    }
+  }
+
+  &.su-button--secondary {
+    :not(:hover):not(:focus) {
+      &:after,
+      &.su-link--external:after {
+        background-color: $guiroy-color-primary;
+      }
+    }
+  }
+
+  &.mailto {
+    svg {
+      width: 31px;
+      height: 35px;
+    }
+  }
 }
 
-// External link icon color on primary buttons.
+.su-button--secondary {
+  @include rounded-button-general();
+  @include secondary-button-style($guiroy-color-primary, $guiroy-color-primary);
+  @include set-button-border-color($guiroy-button-border-gradient);
+  box-shadow: none;
+
+  &:hover,
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+// External link icon colors
 a.su-link--external {
   &.su-button:not(.su-button--secondary),
   &.su-button--big:not(.su-button--secondary) {
