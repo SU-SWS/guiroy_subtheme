@@ -13,7 +13,8 @@ Guiroy Subtheme is an experimental Stanford sub-theme that works with the Stanfo
 Features of this subtheme include:
 - Banner with fixed aspect ratio
 - Rounded buttons
-- It is also based on the Minimally Branded subtheme, as this theme is meant to have very little branding.
+- Source serif headers
+- Some settings from Minimally Branded subtheme, as this theme is meant to have very little branding.
 
 Documentation
 ---
@@ -23,6 +24,19 @@ https://devguide.sites.stanford.edu/front-end/drupal/sub-themes
 Installation
 ---
 Install on a site that uses Stanford Basic as an enabled theme.
+
+Build requirements
+---
+The front-end build requires **Node.js 18** (see `.nvmrc` and `package.json` engines). Older Node versions (e.g. 11 or 12) cause build failures because a dependency (cosmiconfig via postcss-loader) uses optional chaining (`?.`), which needs Node 14+.
+
+Before running the build:
+```bash
+nvm use      # use Node from .nvmrc (18)
+# or, if Node 18 isn't installed:
+nvm install 18
+nvm use 18
+npm run build
+```
 
 Configuration
 ---

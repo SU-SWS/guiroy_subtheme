@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+// Remove Stanford wordmark/logo at the top of the page (keep line4 and custom logo if present).
+.su-lockup__wordmark {
+  display: none !important;
+}
+
 // Minimally Branded: lockup — remove border, adjust spacing.
 .su-lockup__cell1,
 .su-lockup__cell2 {

@@ -6,3 +6,8 @@
   height: 30px;
   padding: 0;
 }
+
+// Remove Stanford logo from the brand bar.
+.su-brand-bar__container {
+  display: none;
+}
