@@ -21,5 +21,9 @@ $guiroy-color-bg-card: #ffffff;
 $guiroy-color-card-border: #e0e6e9;
 $guiroy-color-card-shadow: rgba(0, 103, 127, 0.08);
 
+// Button gradients (same approach as stvp_subtheme rounded buttons)
+$guiroy-button-gradient: linear-gradient(90deg, $guiroy-color-primary 0%, $guiroy-color-primary-hover 100%);
+$guiroy-button-border-gradient: linear-gradient(to right, $guiroy-color-primary, $guiroy-color-primary-hover);
+
 // Replaces Cardinal Red (#8C1515) sitewide
 $guiroy-color-cool-grey: #53565a;

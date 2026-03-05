@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+// Fixed aspect ratio for the image banner (overrides Drupal responsive image
+// behavior so the banner keeps a consistent ratio instead of stretching).
+// Adjust $guiroy-banner-aspect-ratio to change the ratio (e.g. 21/9, 16/9, 2/1).
+
+$guiroy-banner-aspect-ratio: 21 / 9;
+
+.su-hero__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: $guiroy-banner-aspect-ratio;
+
+  // Let the container drive height; avoid min-height from parent themes.
+  min-height: 0;
+  max-height: none;
+
+  overflow: hidden;
+
+  // Inner wrappers (Drupal responsive image, .media, etc.) fill the box.
+  > div,
+  > article,
+  .media,
+  .image,
+  .field--name-field-su-banner-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  // Image fills the aspect-ratio box without distorting.
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  // picture element: make the img inside fill (picture itself is just a wrapper).
+  picture {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
