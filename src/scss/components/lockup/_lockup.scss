@@ -30,3 +30,20 @@
     margin: 0;
   }
 }
+
+// Local footer: swap lockup cells so cell1 appears on the right,
+// vertically aligned with cell2, without affecting lockups elsewhere.
+.su-local-footer__header {
+  .su-lockup {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .su-lockup__cell1 {
+    order: 2;
+  }
+
+  .su-lockup__cell2 {
+    order: 1;
+  }
+}
