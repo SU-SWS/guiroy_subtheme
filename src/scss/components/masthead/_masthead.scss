@@ -4,3 +4,33 @@
 .su-masthead {
   background-color: $su-color-foggy-light;
 }
+
+// Put branding and main menu on one row, vertically aligned.
+// Override base 12-col flex so region-header and region-menu sit side-by-side.
+.su-masthead--inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .region-header {
+    flex: 0 0 auto;
+    max-width: 100%;
+    align-self: center;
+  }
+
+  .region-search {
+    flex: 0 0 auto;
+    @include grid-media-max('md') {
+      display: none;
+    }
+  }
+
+  .region-menu {
+    flex: 1 1 auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+  }
+}
