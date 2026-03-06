@@ -1,12 +1,5 @@
 @charset "UTF-8";
 
-// Minimally Branded secondary nav — accent uses guiroy primary.
-.su-secondary-nav--light {
-  .su-secondary-nav__link {
-    color: $guiroy-color-primary;
-  }
-}
-
 a {
   &.su-link--external {
     &.su-secondary-nav__link {
