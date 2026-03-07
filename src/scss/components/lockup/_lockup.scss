@@ -31,9 +31,12 @@
   }
 }
 
-// Local footer: swap lockup cells so cell1 appears on the right,
-// vertically aligned with cell2; right-align cell1 content.
+// Local footer: lockup on the right side of the header; swap cells so cell1
+// is on the right, vertically aligned with cell2; right-align cell1 content.
 .su-local-footer__header {
+  display: flex;
+  justify-content: flex-end;
+
   .su-lockup {
     display: flex;
     flex-wrap: wrap;
