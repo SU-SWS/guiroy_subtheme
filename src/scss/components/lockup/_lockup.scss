@@ -32,7 +32,7 @@
 }
 
 // Local footer: swap lockup cells so cell1 appears on the right,
-// vertically aligned with cell2, without affecting lockups elsewhere.
+// vertically aligned with cell2; right-align cell1 content.
 .su-local-footer__header {
   .su-lockup {
     display: flex;
@@ -41,6 +41,10 @@
 
   .su-lockup__cell1 {
     order: 2;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
   .su-lockup__cell2 {
