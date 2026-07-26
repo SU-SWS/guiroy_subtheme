@@ -4,13 +4,34 @@
 // Stanford Basic base theme loads Source Serif 4 from Google Fonts; fallback to system serif.
 $guiroy-font-serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
 
+// Space Grotesk, self-hosted from src/assets/fonts/space-grotesk.
+// Used for lockup lines (weight 700) and headings (weight 500).
+$guiroy-font-sans: "Space Grotesk", Helvetica, Arial, sans-serif;
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/space-grotesk/SpaceGrotesk-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/space-grotesk/SpaceGrotesk-Bold.ttf') format('truetype');
+}
+
 // Site name (lockup lines in header).
 .su-lockup__line1,
 .su-lockup__line2,
 .su-lockup__line3,
 .su-lockup__line4,
 .su-lockup__line5 {
-  font-family: $guiroy-font-serif;
+  font-family: $guiroy-font-sans;
+  font-weight: 700;
 }
 
 // Headings h1–h4 (page title, WYSIWYG, and general).
@@ -25,5 +46,6 @@ h4,
 .su-card__headline,
 .su-entity-headline,
 .su-list-headline {
-  font-family: $guiroy-font-serif;
+  font-family: $guiroy-font-sans;
+  font-weight: 500;
 }
