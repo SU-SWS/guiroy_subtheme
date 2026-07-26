@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+// Default (white background) link color for inline WYSIWYG links.
+// Replaces the Decanter default ($su-color-digital-blue / hover black) with
+// the Guiroy brand palette. Excludes button-styled links (.su-button,
+// .su-button--secondary, .su-button--big), which keep their own colors.
+//
+// Covers both the link text/glyph color (inherited by text-based icons like
+// .su-link--more) and mask-based link icons (external, download, action,
+// jump, video, internal), which render via background-color on ::before/
+// ::after — see decanter's link-icon mixin.
+//
+// The navy-background override for these same links lives in _sections.scss
+// (.layout-background.bg-dcecef).
+
+.ptype-stanford-wysiwyg a:not(.su-button):not(.su-button--secondary):not(.su-button--big) {
+  color: $guiroy-teal;
+
+  &::before,
+  &::after {
+    background-color: $guiroy-teal;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $guiroy-navy;
+
+    &::before,
+    &::after {
+      background-color: $guiroy-navy;
+    }
+  }
+}

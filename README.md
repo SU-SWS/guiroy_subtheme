@@ -74,7 +74,21 @@ if the palette label changes.
 | --- | --- | --- |
 | Lagunita Light | `#dcecef` | `#3C3846` ($guiroy-navy) |
 
-When Lagunita Light is selected, WYSIWYG paragraph text (`.ptype-stanford-wysiwyg`), which otherwise inherits the default body text color (`#2e2d29`), is overridden to white (`#FFF`) for legibility against the dark background. Links and buttons keep their existing colors.
+When Lagunita Light is selected, WYSIWYG paragraph text (`.ptype-stanford-wysiwyg`), which otherwise inherits the default body text color (`#2e2d29`), is overridden to white (`#FFF`) for legibility against the dark background. Secondary buttons (`.su-button--secondary`) in this section get a transparent background, a solid white border, and white text/arrow instead of their default white background and gradient border. Regular inline links (and their icons) in this section are white with a `$guiroy-yellow` hover state.
+
+Link colors
+---
+
+Regular inline links in `.ptype-stanford-wysiwyg` (defined in `src/scss/theme/_links.scss`) use `$guiroy-teal` with a `$guiroy-navy` hover state, replacing the Decanter default (digital blue / black hover). This covers both link text and link icons (external, download, action, jump, video, internal). Button-styled links (`.su-button`, `.su-button--secondary`, `.su-button--big`) are excluded and keep their own colors. On the navy section background (see above), these same links switch to white with a `$guiroy-yellow` hover state instead.
+
+Header (masthead)
+---
+
+The masthead background is `$guiroy-navy` (`src/scss/components/masthead/_masthead.scss`), with the lockup cell divider borders switched to white so they stay visible.
+
+Nav and search text (`src/scss/components/main-nav/_main-nav.scss` and `src/scss/components/search/_search.scss`) are white by default with a `$guiroy-yellow` hover/focus/active state, matching the navy-section link scheme above. This covers the mobile hamburger toggle label, top-level menu links, and dropdown/flyout submenu links. Dropdown submenu panels get the same `$guiroy-navy` background as the masthead rather than the default white panel. The nav's accent/current-item indicator bars, previously `$guiroy-color-primary` (now equal to `$guiroy-navy` — see Colors above), were switched to `$guiroy-yellow` so they stay visible against the navy background instead of disappearing.
+
+Known follow-up: the search icon (`assets/svg/search-primary.svg`) and dropdown caret icon (`assets/svg/caret-down-primary.svg`) are flat-color SVG files with their fill baked in (still the old plum `#620059`), not CSS-driven — they weren't recolored here since that requires new SVG assets. Let me know if you'd like white versions made.
 
 Developer
 ---

@@ -1,6 +1,17 @@
 @charset "UTF-8";
 
-// Minimally Branded: search submit icon (guiroy primary).
+// Search submit icon: white version, since this only renders on the navy masthead.
 .su-site-search__submit {
-  background: transparent url('../assets/svg/search-primary.svg') no-repeat 0 0;
+  background: transparent url('../assets/svg/search-white.svg') no-repeat 0 0;
+}
+
+// Search text on the navy masthead: white input text and placeholder,
+// matching the nav text color (see main-nav/_main-nav.scss).
+.su-site-search__input {
+  color: $su-color-white;
+
+  &::placeholder {
+    color: $su-color-white;
+    opacity: 0.75;
+  }
 }
