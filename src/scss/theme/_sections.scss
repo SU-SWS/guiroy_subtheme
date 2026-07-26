@@ -13,10 +13,64 @@
 
     // Default Decanter body text ($su-color-black, #2e2d29) is unreadable on
     // the dark navy background — force white text on wysiwyg paragraphs.
-    // Decanter sets explicit colors on links/buttons, so they are unaffected
-    // by this inheritance and intentionally left alone here.
+    // Regular links and buttons get their own color overrides below since
+    // Decanter sets their color explicitly (not inherited from this rule).
     .ptype-stanford-wysiwyg {
       color: $su-color-white;
+    }
+
+    // Regular inline links on the navy background: white text/icons with a
+    // guiroy-yellow hover state. See _links.scss for the default (white
+    // background) teal/navy-hover treatment these links otherwise get.
+    .ptype-stanford-wysiwyg a:not(.su-button):not(.su-button--secondary):not(.su-button--big) {
+      color: $su-color-white;
+
+      &::before,
+      &::after {
+        background-color: $su-color-white;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $guiroy-yellow;
+
+        &::before,
+        &::after {
+          background-color: $guiroy-yellow;
+        }
+      }
+    }
+
+    // Secondary buttons (.su-button--secondary) use a white background with a
+    // gradient "border" (a ::before pseudo-element behind a transparent
+    // border, via background-clip: padding-box — see
+    // utilities/mixins/_buttons.scss). On this navy background, make the
+    // button background transparent, the border solid white, and the text
+    // (and arrow icon) white so it stays legible.
+    .su-button--secondary {
+      background: transparent;
+
+      &::before {
+        background: $su-color-white;
+      }
+
+      &:not(:hover):not(:focus) {
+        color: $su-color-white;
+
+        &::after {
+          background-color: $su-color-white;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        background: transparent;
+
+        &::before {
+          background: $su-color-white;
+        }
+      }
     }
   }
 

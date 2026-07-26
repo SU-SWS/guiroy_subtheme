@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
-// Minimally Branded main nav — nav accent uses guiroy primary (not link/button color).
+// Minimally Branded main nav — nav accent uses guiroy-yellow (visible against
+// the navy masthead background; not the link/button color).
 // Mobile menu shows until xl (collapse sooner); accent styles apply in mobile range (xs–lg).
 @include grid-media-between('xs', 'lg') {
   .su-nav-toggle {
     &:before {
-      background-color: $guiroy-color-primary;
+      background-color: $guiroy-yellow;
     }
   }
 
@@ -14,7 +15,7 @@
       .su-multi-menu__link {
         &:active {
           &:before {
-            background-color: $guiroy-color-primary;
+            background-color: $guiroy-yellow;
           }
         }
       }
@@ -23,12 +24,12 @@
     .su-multi-menu__item--current {
       > .su-multi-menu__link {
         &:before {
-          background-color: $guiroy-color-primary;
+          background-color: $guiroy-yellow;
         }
 
         &:active {
           &:before {
-            background-color: $guiroy-color-primary;
+            background-color: $guiroy-yellow;
           }
         }
 
@@ -36,7 +37,7 @@
         &:hover,
         &:active {
           &::before {
-            background-color: $guiroy-color-primary;
+            background-color: $guiroy-yellow;
           }
         }
       }
@@ -46,13 +47,13 @@
   .su-multi-menu {
     .su-multi-menu__nav-toggle {
       &:before {
-        background-color: $guiroy-color-primary;
+        background-color: $guiroy-yellow;
       }
       &:active,
       &:focus,
       &:hover {
         &:before {
-          background-color: $guiroy-color-primary;
+          background-color: $guiroy-yellow;
         }
       }
 
@@ -61,7 +62,7 @@
         &:focus,
         &:hover {
           &:before {
-            background-color: $guiroy-color-primary;
+            background-color: $guiroy-yellow;
           }
         }
       }
@@ -77,13 +78,13 @@
         > .su-multi-menu__item--parent {
           > .su-nav-toggle {
             &::before {
-              background: transparent url('../assets/svg/caret-down-primary.svg') no-repeat center / 50%;
+              background: transparent url('../assets/svg/caret-down-white.svg') no-repeat center / 50%;
             }
 
             &:focus,
             &:hover {
               &::before {
-                background: transparent url('../assets/svg/caret-down-primary.svg') no-repeat center / 50%;
+                background: transparent url('../assets/svg/caret-down-white.svg') no-repeat center / 50%;
               }
             }
           }
@@ -94,12 +95,12 @@
     .su-multi-menu__item--current {
       > .su-multi-menu__link {
         &:before {
-          background-color: $guiroy-color-primary;
+          background-color: $guiroy-yellow;
         }
 
         &:active {
           &:before {
-            background-color: $guiroy-color-primary;
+            background-color: $guiroy-yellow;
           }
         }
 
@@ -107,7 +108,7 @@
         &:hover,
         &:active {
           &::before {
-            background-color: $guiroy-color-primary;
+            background-color: $guiroy-yellow;
           }
         }
       }
@@ -120,7 +121,7 @@
     .su-multi-menu__link {
       &:active {
         &::before {
-          background-color: $guiroy-color-primary;
+          background-color: $guiroy-yellow;
         }
       }
     }
@@ -170,3 +171,34 @@
     display: none;
   }
 }
+
+// Nav text on the navy masthead: white by default, guiroy-yellow on
+// hover/focus/active — same scheme used for links on the navy section
+// background (see theme/_sections.scss). Applies to the mobile hamburger
+// toggle label and every menu link, at every nesting level (top bar and
+// dropdown/flyout submenus), since su-multi-menu only renders in the header.
+.su-multi-menu {
+  .su-multi-menu__nav-toggle {
+    color: $su-color-white;
+  }
+
+  .su-multi-menu__link {
+    color: $su-color-white;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $guiroy-yellow;
+    }
+  }
+
+  // Dropdown/flyout submenu panels (nested <ul>, one level down from a
+  // parent item) get the same navy background as the masthead, so they read
+  // as a continuation of the header rather than a separate white panel.
+  .su-multi-menu__item--parent > .su-multi-menu__menu {
+    background-color: $guiroy-navy;
+  }
+}
+
+// Mobile expanded menu panel is already dark ($su-color-black, above);
+// white text/links apply there too via the rules above.

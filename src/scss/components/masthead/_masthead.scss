@@ -1,8 +1,18 @@
 @charset "UTF-8";
 
-// Minimally Branded: light masthead background.
+// Guiroy navy masthead background.
 .su-masthead {
-  background-color: $su-color-foggy-light;
+  background-color: $guiroy-navy;
+
+  // Decanter's lockup cell divider border defaults to black, which is
+  // invisible against the navy background — switch it to white.
+  .su-lockup__cell1 {
+    border-right-color: $su-color-white;
+  }
+
+  .su-lockup__cell2 {
+    border-left-color: $su-color-white;
+  }
 }
 
 // Put branding and main menu on one row, vertically aligned.
