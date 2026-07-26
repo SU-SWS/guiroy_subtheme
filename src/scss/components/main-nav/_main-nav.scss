@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+// Minimally Branded main nav — nav accent uses guiroy primary (not link/button color).
+// Mobile menu shows until xl (collapse sooner); accent styles apply in mobile range (xs–lg).
+@include grid-media-between('xs', 'lg') {
+  .su-nav-toggle {
+    &:before {
+      background-color: $guiroy-color-primary;
+    }
+  }
+
+  .su-multi-menu {
+    .su-multi-menu__menu {
+      .su-multi-menu__link {
+        &:active {
+          &:before {
+            background-color: $guiroy-color-primary;
+          }
+        }
+      }
+    }
+
+    .su-multi-menu__item--current {
+      > .su-multi-menu__link {
+        &:before {
+          background-color: $guiroy-color-primary;
+        }
+
+        &:active {
+          &:before {
+            background-color: $guiroy-color-primary;
+          }
+        }
+
+        &:focus,
+        &:hover,
+        &:active {
+          &::before {
+            background-color: $guiroy-color-primary;
+          }
+        }
+      }
+    }
+  }
+
+  .su-multi-menu {
+    .su-multi-menu__nav-toggle {
+      &:before {
+        background-color: $guiroy-color-primary;
+      }
+      &:active,
+      &:focus,
+      &:hover {
+        &:before {
+          background-color: $guiroy-color-primary;
+        }
+      }
+
+      &[aria-expanded='true'] {
+        &:active,
+        &:focus,
+        &:hover {
+          &:before {
+            background-color: $guiroy-color-primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Desktop horizontal menu and dropdown styles only from xl up.
+@include grid-media-min('xl') {
+  .su-multi-menu {
+    &.su-multi-menu--dropdowns {
+      .su-multi-menu__menu {
+        > .su-multi-menu__item--parent {
+          > .su-nav-toggle {
+            &::before {
+              background: transparent url('../assets/svg/caret-down-primary.svg') no-repeat center / 50%;
+            }
+
+            &:focus,
+            &:hover {
+              &::before {
+                background: transparent url('../assets/svg/caret-down-primary.svg') no-repeat center / 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .su-multi-menu__item--current {
+      > .su-multi-menu__link {
+        &:before {
+          background-color: $guiroy-color-primary;
+        }
+
+        &:active {
+          &:before {
+            background-color: $guiroy-color-primary;
+          }
+        }
+
+        &:focus,
+        &:hover,
+        &:active {
+          &::before {
+            background-color: $guiroy-color-primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.su-multi-menu {
+  .su-multi-menu__menu {
+    .su-multi-menu__link {
+      &:active {
+        &::before {
+          background-color: $guiroy-color-primary;
+        }
+      }
+    }
+  }
+}
+
+// Collapse to mobile menu sooner: keep hamburger + vertical menu from lg up to xl.
+@include grid-media-between('lg', 'xl') {
+  .su-multi-menu {
+    .su-multi-menu__nav-toggle {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      padding: 0 0 2rem;
+      margin: 0;
+      outline: none;
+      width: 40px;
+      background-color: transparent;
+    }
+
+    .su-multi-menu__menu .su-nav-toggle {
+      display: block;
+    }
+
+    .su-multi-menu__menu-lv1 {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      background-color: $su-color-black;
+    }
+
+    .su-multi-menu__nav-toggle[aria-expanded='false'] + .su-multi-menu__menu-lv1 {
+      display: none;
+    }
+
+    .su-multi-menu__nav-toggle[aria-expanded='true'] + .su-multi-menu__menu-lv1 {
+      position: absolute;
+      width: 100%;
+      max-width: 100%;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+@include grid-media-min('xl') {
+  .su-multi-menu .su-multi-menu__nav-toggle {
+    display: none;
+  }
+}

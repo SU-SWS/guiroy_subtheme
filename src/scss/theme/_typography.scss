@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+// Source Serif 4 for site name and headings (h1–h4).
+// Stanford Basic base theme loads Source Serif 4 from Google Fonts; fallback to system serif.
+$guiroy-font-serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+
+// Site name (lockup lines in header).
+.su-lockup__line1,
+.su-lockup__line2,
+.su-lockup__line3,
+.su-lockup__line4,
+.su-lockup__line5 {
+  font-family: $guiroy-font-serif;
+}
+
+// Headings h1–h4 (page title, WYSIWYG, and general).
+h1,
+h2,
+h3,
+h4,
+.su-wysiwyg-text h1,
+.su-wysiwyg-text h2,
+.su-wysiwyg-text h3,
+.su-wysiwyg-text h4,
+.su-card__headline,
+.su-entity-headline,
+.su-list-headline {
+  font-family: $guiroy-font-serif;
+}

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+// WYSIWYG heading links — styling from Minimally Branded; color uses guiroy primary.
+.su-wysiwyg-text {
+  h2,
+  h3,
+  h4,
+  h5 {
+    a {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

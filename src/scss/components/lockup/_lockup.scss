@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+// Remove Stanford wordmark/logo at the top of the page (keep line4 and custom logo if present).
+.su-lockup__wordmark {
+  display: none !important;
+}
+
+// Minimally Branded: lockup — remove border, adjust spacing.
+.su-lockup__cell1,
+.su-lockup__cell2 {
+  border: 0;
+
+  .su-lockup__line4,
+  .su-lockup__logo-wrapper {
+    padding-right: 7px;
+  }
+
+  .su-lockup__line4 {
+    overflow-wrap: break-word;
+    word-break: inherit;
+  }
+}
+
+.su-lockup__cell1.empty-logo {
+  padding: 0;
+  margin: 0;
+
+  + .su-lockup__cell2 {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+// Local footer: lockup on the right side of the header; swap cells so cell1
+// is on the right, vertically aligned with cell2; right-align cell1 content.
+.su-local-footer__header {
+  display: flex;
+  justify-content: flex-end;
+
+  .su-lockup {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .su-lockup__cell1 {
+    order: 2;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .su-lockup__cell2 {
+    order: 1;
+  }
+}

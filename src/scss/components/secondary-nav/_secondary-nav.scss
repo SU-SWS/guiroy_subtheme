@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+a {
+  &.su-link--external {
+    &.su-secondary-nav__link {
+      &:after {
+        background-color: $guiroy-color-primary;
+      }
+    }
+  }
+}
+
+.su-secondary-nav--light {
+  .su-secondary-nav__link {
+    &:focus {
+      &::before {
+        background-color: $guiroy-color-primary;
+      }
+    }
+    &:hover {
+      &::before {
+        background-color: $guiroy-color-primary;
+      }
+    }
+  }
+}

@@ -19,7 +19,13 @@
 
 // Config and supporting scss.
 
-// Components.
+// Components (Minimally Branded theming + guiroy-specific).
 @import 'banner/banner-aspect-ratio';
-// @import 'component-name/index';
+@import 'brandbar/index';
+@import 'global-footer/index';
+@import 'lockup/index';
+@import 'masthead/index';
+@import 'main-nav/index';
+@import 'secondary-nav/index';
+@import 'search/index';
 
