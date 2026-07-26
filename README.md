@@ -35,13 +35,32 @@ nvm use      # use Node from .nvmrc (18)
 # or, if Node 18 isn't installed:
 nvm install 18
 nvm use 18
+npm install  # install dependencies (first time, or after pulling changes to package.json)
 npm run build
 ```
+
+This theme uses **npm** as its package manager (`package-lock.json`). Do not install with yarn or commit a `yarn.lock` file.
 
 Configuration
 ---
 
 Nothing special needed. Install, enable, and set as the default active theme.
+
+Colors
+---
+
+Subtheme-specific color variables are defined in `src/scss/utilities/variables/_colors.scss`. Stanford/Decanter colors are not defined here.
+
+Brand palette:
+
+| Variable | Hex |
+| --- | --- |
+| `$guiroy-navy` | `#3C3846` |
+| `$guiroy-blue` | `#4A4B7B` |
+| `$guiroy-yellow` | `#FDE9CC` |
+| `$guiroy-orange` | `#FDBE83` |
+| `$guiroy-lavender` | `#C8A3B5` |
+| `$guiroy-teal` | `#2F4E68` |
 
 Developer
 ---
@@ -51,6 +70,7 @@ If you wish to develop on this theme you will most likely need to compile some n
 ```
 nvm install 18
 nvm use
+npm install
 ```
 After you've made a change you want to see processed, you can run:
 ```
