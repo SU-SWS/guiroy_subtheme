@@ -1,0 +1,34 @@
+# React Paragraphs behavior plugin definitions.
+# Plugin property $defaults are defined in ReactBehaviorsPluginManager.
+#
+# This is what surfaces the "Overlay Style" dropdown in the paragraph editing
+# interface for Image Banner and Page Title Banner, matching the pattern used
+# by stvp_subtheme's react_behaviors.yml (e.g. its "Banner Style" and wave
+# options) — no custom module required.
+banner_overlay_info:
+  id: guiroy_banner_overlay
+  label: 'Guiroy Banner Overlay Style'
+  bundles:
+    - paragraphs_type|stanford_banner
+  config:
+    overlay_style:
+      type: select
+      title: 'Overlay Style'
+      description: 'Choose how the banner card is displayed over the image.'
+      empty_option: 'Default'
+      options:
+        guiroy-banner--overlay-center: 'Centered, white text, no background'
+
+page_title_banner_overlay_info:
+  id: guiroy_page_title_banner_overlay
+  label: 'Guiroy Page Title Banner Overlay Style'
+  bundles:
+    - paragraphs_type|stanford_page_title_banner
+  config:
+    overlay_style:
+      type: select
+      title: 'Overlay Style'
+      description: 'Choose how the title card is displayed over the image.'
+      empty_option: 'Default'
+      options:
+        guiroy-banner--overlay-center: 'Centered, white text, no background'

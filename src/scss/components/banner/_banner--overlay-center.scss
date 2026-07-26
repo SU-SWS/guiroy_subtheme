@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+// Overlay-center banner variant.
+//
+// Selectable in the editing interface via guiroy_subtheme.react_behaviors.yml
+// (the "Overlay Style" field on Image Banner / Page Title Banner paragraphs),
+// same mechanism used by stvp_subtheme's "Banner Style" / wave options — no
+// custom module required. The react_paragraphs module applies the chosen
+// option's key as a class directly on the paragraph's own wrapper element
+// (same element as ptype-stanford-banner / ds-entity--stanford-banner),
+// so these are compound selectors, not descendant selectors.
+//
+// Effect: centers .su-hero__card over the banner image, removes its
+// white background/border/shadow, and sets the card text to white.
+
+.ptype-stanford-banner.guiroy-banner--overlay-center,
+.ds-entity--stanford-banner.guiroy-banner--overlay-center,
+.ptype-stanford-page-title-banner.guiroy-banner--overlay-center,
+.ds-entity--stanford-page-title-banner.guiroy-banner--overlay-center {
+
+  .su-hero {
+    @include grid-media('md') {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .su-hero__card {
+    // Remove the default white card background/border/shadow.
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+
+    // Center the card over the image instead of the default left/bottom
+    // offset positioning.
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+
+    @include grid-media('md') {
+      margin: 0 auto;
+      left: auto;
+    }
+
+    @include grid-media('xl') {
+      margin: 0 auto;
+      left: auto;
+      bottom: auto;
+    }
+
+    .su-card__contents {
+      color: $su-color-white;
+      margin: 0 auto;
+
+      // Headings, super-headline, and body copy all inherit white.
+      > *,
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      span {
+        color: $su-color-white;
+      }
+
+      a {
+        color: $su-color-white;
+        text-decoration: underline;
+
+        &:hover,
+        &:focus {
+          color: $su-color-foggy-light;
+        }
+      }
+    }
+  }
+}
