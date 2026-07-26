@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+// Guiroy Subtheme section color overrides.
+// The .layout-background.bg-[hex] selector pattern is set by
+// stanford_layout_paragraphs; the class name is anchored to the original
+// palette hex and will not change if the palette label changes.
+
+.layout-background {
+
+  // Lagunita Light (#dcecef) → replaced with Guiroy Navy (#3C3846).
+  &.bg-dcecef {
+    background: $guiroy-navy;
+
+    // Default Decanter body text ($su-color-black, #2e2d29) is unreadable on
+    // the dark navy background — force white text on wysiwyg paragraphs.
+    // Decanter sets explicit colors on links/buttons, so they are unaffected
+    // by this inheritance and intentionally left alone here.
+    .ptype-stanford-wysiwyg {
+      color: $su-color-white;
+    }
+  }
+
+}

@@ -62,6 +62,20 @@ Brand palette:
 | `$guiroy-lavender` | `#C8A3B5` |
 | `$guiroy-teal` | `#2F4E68` |
 
+Section color overrides
+---
+
+The following Stanford Sites section background colors are overridden in
+`src/scss/theme/_sections.scss`. The selector class names are anchored to the
+original palette hex (set by `stanford_layout_paragraphs`) and will not change
+if the palette label changes.
+
+| Palette label | Original hex | Override hex |
+| --- | --- | --- |
+| Lagunita Light | `#dcecef` | `#3C3846` ($guiroy-navy) |
+
+When Lagunita Light is selected, WYSIWYG paragraph text (`.ptype-stanford-wysiwyg`), which otherwise inherits the default body text color (`#2e2d29`), is overridden to white (`#FFF`) for legibility against the dark background. Links and buttons keep their existing colors.
+
 Developer
 ---
 
