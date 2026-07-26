@@ -3,27 +3,35 @@
 
 // All variable names should be prefaced with your abbreviation (guiroy)
 
+// Brand palette
+$guiroy-navy: #3C3846;
+$guiroy-blue: #4A4B7B;
+$guiroy-yellow: #FDE9CC;
+$guiroy-orange: #FDBE83;
+$guiroy-lavender: #C8A3B5;
+$guiroy-teal: #2F4E68;
+
 // Primary palette - buttons, links, accents
-$guiroy-color-primary: #620059;
-$guiroy-color-primary-hover: #350D36;
-$guiroy-color-primary-light:  #734675;
+$guiroy-color-primary: $guiroy-navy;
+$guiroy-color-primary-hover: $guiroy-navy;
+$guiroy-color-primary-light: $guiroy-blue;
 
 // Secondary palette - secondary buttons, borders
-$guiroy-color-secondary: #5c6773;
-$guiroy-color-secondary-hover: #3d4652;
+$guiroy-color-secondary: $guiroy-blue;
+$guiroy-color-secondary-hover: $guiroy-navy;
 
 // Background colors
-$guiroy-color-bg-light: #f7f9fa;
-$guiroy-color-bg-subtle: #eef2f4;
-$guiroy-color-bg-card: #ffffff;
+$guiroy-color-bg-light: $guiroy-yellow;
+$guiroy-color-bg-subtle: $guiroy-yellow;
+$guiroy-color-bg-card: $guiroy-yellow;
 
 // Card styling
-$guiroy-color-card-border: #e0e6e9;
-$guiroy-color-card-shadow: rgba(0, 103, 127, 0.08);
+$guiroy-color-card-border: $guiroy-yellow;
+$guiroy-color-card-shadow: rgba(47, 78, 104, 0.08); // closest brand color: $guiroy-teal
 
 // Button gradients (same approach as stvp_subtheme rounded buttons)
 $guiroy-button-gradient: linear-gradient(90deg, $guiroy-color-primary 0%, $guiroy-color-primary-hover 100%);
 $guiroy-button-border-gradient: linear-gradient(to right, $guiroy-color-primary, $guiroy-color-primary-hover);
 
 // Replaces Cardinal Red (#8C1515) sitewide
-$guiroy-color-cool-grey: #53565a;
+$guiroy-color-cool-grey: $guiroy-blue;

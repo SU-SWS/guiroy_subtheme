@@ -65,6 +65,10 @@ var webpackConfig = {
       {
         test: /\.(png|jpg|gif|svg)$/i,
         type: "asset"
+      },
+      {
+        test: /\.(woff2?|ttf|otf|eot)$/i,
+        type: "asset"
       }
     ]
   },
