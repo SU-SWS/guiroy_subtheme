@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+// Guiroy gradient divider at the bottom of the local footer — matches the
+// brand bar (see brandbar/_brandbar.scss), same $guiroy-gradient-divider,
+// same 1rem thickness.
+.su-local-footer {
+  border-bottom: 1rem solid transparent;
+  border-image: $guiroy-gradient-divider 1;
+}

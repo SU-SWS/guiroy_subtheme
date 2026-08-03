@@ -88,7 +88,15 @@ The masthead background is `$guiroy-navy` (`src/scss/components/masthead/_masthe
 
 Nav and search text (`src/scss/components/main-nav/_main-nav.scss` and `src/scss/components/search/_search.scss`) are white by default with a `$guiroy-yellow` hover/focus/active state, matching the navy-section link scheme above. This covers the mobile hamburger toggle label, top-level menu links, and dropdown/flyout submenu links. Dropdown submenu panels get the same `$guiroy-navy` background as the masthead rather than the default white panel. The nav's accent/current-item indicator bars, previously `$guiroy-color-primary` (now equal to `$guiroy-navy` — see Colors above), were switched to `$guiroy-yellow` so they stay visible against the navy background instead of disappearing.
 
-Known follow-up: the search icon (`assets/svg/search-primary.svg`) and dropdown caret icon (`assets/svg/caret-down-primary.svg`) are flat-color SVG files with their fill baked in (still the old plum `#620059`), not CSS-driven — they weren't recolored here since that requires new SVG assets. Let me know if you'd like white versions made.
+The search submit icon (`src/assets/svg/search-white.svg`) and dropdown caret icon (`src/assets/svg/caret-down-white.svg`) are white versions of the originals, since both only render on the navy masthead.
+
+Brand gradient
+---
+
+`$guiroy-gradient-divider` (defined in `src/scss/utilities/variables/_colors.scss`) is a left-to-right gradient across the full brand palette (navy → teal → blue → lavender → orange → yellow), the same approach as vpue_undergrad_subtheme's `$vpue-gradient-footer-divider`. It's used in two places:
+
+- The brand bar (`.su-brand-bar--dark`, `src/scss/components/brandbar/_brandbar.scss`) — 1rem tall, background is the gradient.
+- The bottom of the local footer (`.su-local-footer`, `src/scss/components/local-footer/_local-footer.scss`) — a matching 1rem `border-bottom` using the same gradient via `border-image`.
 
 Developer
 ---

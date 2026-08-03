@@ -1,10 +1,16 @@
 @charset "UTF-8";
 
-// Minimally Branded: compact brand bar and global footer.
-.su-brand-bar--dark,
+// Minimally Branded: compact global footer.
 .su-global-footer--dark {
   height: 30px;
   padding: 0;
+}
+
+// Brand bar: guiroy gradient divider, 1rem tall.
+.su-brand-bar--dark {
+  height: 1rem;
+  padding: 0;
+  background: $guiroy-gradient-divider;
 }
 
 // Remove Stanford logo from the brand bar.
