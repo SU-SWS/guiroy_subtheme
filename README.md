@@ -13,7 +13,7 @@ Guiroy Subtheme is an experimental Stanford sub-theme that works with the Stanfo
 Features of this subtheme include:
 - Banner with fixed aspect ratio
 - Rounded buttons
-- Source serif headers
+- Space Grotesk headings and site name
 - Some settings from Minimally Branded subtheme, as this theme is meant to have very little branding.
 
 Documentation
@@ -62,6 +62,20 @@ Brand palette:
 | `$guiroy-lavender` | `#C8A3B5` |
 | `$guiroy-teal` | `#2F4E68` |
 
+Fonts
+---
+
+**Space Grotesk** is self-hosted in `src/assets/fonts/space-grotesk/` (copied from the source files in the top-level `assets/Space_Grotesk/` folder), with `@font-face` declarations and the `$guiroy-font-sans` variable in `src/scss/theme/_typography.scss`. Only two static weights are loaded:
+
+| Weight | File | Used for |
+| --- | --- | --- |
+| 500 (Medium) | `SpaceGrotesk-Medium.ttf` | Headings h1–h4, WYSIWYG headings, card/entity/list headlines |
+| 700 (Bold) | `SpaceGrotesk-Bold.ttf` | Site name / lockup lines (`.su-lockup__line1`–`line5`) in the header |
+
+Everything else (body text, nav, etc.) falls back to Stanford Basic / Decanter's default sans-serif stack.
+
+Source Serif 4 was previously loaded from Google Fonts (`source-serif` library in `guiroy_subtheme.libraries.yml`) for headings and the site name, but is no longer used now that both were switched to Space Grotesk — the library dependency and the unused `$guiroy-font-serif` variable have been removed.
+
 Section color overrides
 ---
 
@@ -97,6 +111,11 @@ Brand gradient
 
 - The brand bar (`.su-brand-bar--dark`, `src/scss/components/brandbar/_brandbar.scss`) — 1rem tall, background is the gradient.
 - The bottom of the local footer (`.su-local-footer`, `src/scss/components/local-footer/_local-footer.scss`) — a matching 1rem `border-bottom` using the same gradient via `border-image`.
+
+Local footer
+---
+
+`.su-local-footer` (`src/scss/components/local-footer/_local-footer.scss`) has a `$guiroy-navy` background with white text. Links are white by default with a `$guiroy-yellow` hover/focus state, matching the scheme used elsewhere on navy backgrounds (section overrides, WYSIWYG links, nav) — this covers both link text and mask-based link icons (e.g. the action-links arrows). Social icons and the lockup cell divider borders in the footer header, which default to black, are switched to white for the same reason.
 
 Developer
 ---

@@ -1,9 +1,56 @@
 @charset "UTF-8";
 
-// Guiroy gradient divider at the bottom of the local footer — matches the
-// brand bar (see brandbar/_brandbar.scss), same $guiroy-gradient-divider,
-// same 1rem thickness.
+// Guiroy navy local footer with white text/links.
 .su-local-footer {
+  background-color: $guiroy-navy;
+  color: $su-color-white;
+
+  // Gradient divider at the bottom — matches the brand bar (see
+  // brandbar/_brandbar.scss), same $guiroy-gradient-divider, same 1rem
+  // thickness.
   border-bottom: 1rem solid transparent;
   border-image: $guiroy-gradient-divider 1;
+
+  // Links: white by default, guiroy-yellow on hover/focus, matching the
+  // scheme used elsewhere on navy backgrounds (see theme/_sections.scss,
+  // theme/_links.scss, main-nav/_main-nav.scss). Covers both link text and
+  // mask-based link icons (e.g. .su-local-footer__action-links arrows),
+  // which render via background-color on ::before/::after.
+  a {
+    color: $su-color-white;
+
+    &::before,
+    &::after {
+      background-color: $su-color-white;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $guiroy-yellow;
+
+      &::before,
+      &::after {
+        background-color: $guiroy-yellow;
+      }
+    }
+  }
+
+  // Social icons (Font Awesome) default to black — switch to white so they
+  // stay visible against the navy background.
+  .su-local-footer__social-links i::before {
+    color: $su-color-white;
+  }
+
+  // Lockup divider borders in the footer header default to black — switch
+  // to white, same fix as the masthead (see masthead/_masthead.scss).
+  .su-local-footer__header {
+    .su-lockup__cell1 {
+      border-right-color: $su-color-white;
+    }
+
+    .su-lockup__cell2 {
+      border-left-color: $su-color-white;
+    }
+  }
 }
